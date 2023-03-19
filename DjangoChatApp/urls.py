@@ -25,7 +25,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', login_required(HomePageView.as_view()), name='home'),
     path("chat/", include('user.urls', namespace="chat")),
-    path('login/', LoginView.as_view(), {'registration': 'login.html'}, name ='login'),
+    path('login/', LoginView.as_view(), {'registration': 'index.html'}, name ='login'),
     path('logout/', LogoutView.as_view(), {'next_page': LOGOUT_REDIRECT_URL}, name='logout'),
     path('signup/', SignupView.as_view(), name='signup'),
     path("__reload__/", include("django_browser_reload.urls")),
